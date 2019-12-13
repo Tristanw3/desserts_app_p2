@@ -20,8 +20,10 @@ class App extends React.Component {
 		));
 		return (
 			<div className="App">
-				<header className="App-header">Upcoming developer conferences in 2020</header>
-				<ul>{foodElements}</ul>
+				<header className="App-header">
+					Delicious foods!!
+					<ul>{foodElements}</ul>
+				</header>
 			</div>
 		);
 	}
