@@ -15,7 +15,7 @@ export const LoginWrapperStyled = styled.section`
 `;
 
 export const LoginStyled = styled.section`
-  margin-top: 20vh; 
+  /* margin-top: 20vh;  */
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -36,35 +36,30 @@ export const LoginHeader = styled.h1`
 `;
 
 export const InputStyling = styled.div`
-         input {
-           width: 300px;
-           height: 30px;
-           margin-bottom: 10px;
-           border: none;
-           background: rgba(255, 255, 255, 0.5);
-           border-radius: 100px;
-           text-align: center;
-           font-size: 20px;
-           padding: 1.2rem;
-         }
+  input {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 100px;
+    text-align: center;
+    font-size: 20px;
+    padding: 1.2rem;
+  }
 
-         input:hover {
-           background: white;
-         }
+  input:hover {
+    background: white;
+  }
 
-         textarea:focus,
-         input:focus {
-           color: hotpink;
-         }
+  textarea:focus,
+  input:focus {
+    color: hotpink;
+  }
 
-         input,
-         select,
-         textarea {
-           color: #222;
-         }
-         ::-webkit-input-placeholder {
-           font-weight: 200;
-           letter-spacing: 1px;
-           color: hotpink;
-         }
-       `;
+  input,
+  select,
+  textarea {
+    color: hotpink;
+  }
+`;
