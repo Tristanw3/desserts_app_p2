@@ -1,5 +1,8 @@
 # README
 
+Run locally command: ```heroku local -f Procfile.dev```
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
