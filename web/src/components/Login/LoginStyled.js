@@ -34,3 +34,37 @@ export const LoginHeader = styled.h1`
   text-shadow: 4px 4px hotpink;
   margin-bottom: 1.5rem;
 `;
+
+export const InputStyling = styled.div`
+         input {
+           width: 300px;
+           height: 30px;
+           margin-bottom: 10px;
+           border: none;
+           background: rgba(255, 255, 255, 0.5);
+           border-radius: 100px;
+           text-align: center;
+           font-size: 20px;
+           padding: 1.2rem;
+         }
+
+         input:hover {
+           background: white;
+         }
+
+         textarea:focus,
+         input:focus {
+           color: hotpink;
+         }
+
+         input,
+         select,
+         textarea {
+           color: #222;
+         }
+         ::-webkit-input-placeholder {
+           font-weight: 200;
+           letter-spacing: 1px;
+           color: hotpink;
+         }
+       `;

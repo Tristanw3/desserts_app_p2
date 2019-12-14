@@ -5,6 +5,7 @@ import {
   LoginWrapperStyled,
   LoginStyled,
   LoginHeader,
+  InputStyling,
 } from './LoginStyled';
 
 import {
@@ -14,17 +15,23 @@ import {
 } from '../Button';
 
 export const Login = () => (
-  <LoginBanner>
-    <LoginWrapperStyled>
-      <LoginStyled>
-        <LoginHeader>Login</LoginHeader>
-        <input type="text" placeholder="Username" />
-        <input type="text" placeholder="Email" />
-        <input type="text" placeholder="Password" />
-        <StyledLink to="/order"><Button>Login</Button></StyledLink>
-        <p><SignupLink to="/signup">Need to Sign-Up?</SignupLink></p>
-      </LoginStyled>
-    </LoginWrapperStyled>
-  </LoginBanner>
-);
+         <LoginBanner>
+           <LoginWrapperStyled>
+             <LoginStyled>
+               <LoginHeader>Login</LoginHeader>
+               <InputStyling>
+                 <input type="text" placeholder="Username" />
+                 <input type="text" placeholder="Email" />
+                 <input type="text" placeholder="Password" />
+               </InputStyling>
+               <StyledLink to="/order">
+                 <Button>Login</Button>
+               </StyledLink>
+               <p>
+                 <SignupLink to="/signup">Need to Sign-Up?</SignupLink>
+               </p>
+             </LoginStyled>
+           </LoginWrapperStyled>
+         </LoginBanner>
+       );
 
