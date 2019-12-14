@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+    post 'api/users' => 'users#create_user'
+    get 'api/users/:user_id' => 'users#get_by_id'
+    post'api/auth/get_token' => 'users#get_token'
