@@ -1,9 +1,6 @@
 import React from 'react';
-
 import { SignupBanner, SignupWrapperStyled, SignupStyled, SignupHeader } from './SignupStyled';
-
 import { Button, StyledLink, SignupLink } from '../Button';
-
 import axios from 'axios';
 
 export default class Signup extends React.Component {
@@ -60,10 +57,10 @@ export default class Signup extends React.Component {
 				<SignupWrapperStyled>
 					<SignupStyled>
 						<SignupHeader>Sign-Up</SignupHeader>
-						<input type="text" placeholder="Name" onChange={this.handleName} />
-						<input type="text" placeholder="Email" onChange={this.handleEmail} />
-						<input type="text" placeholder="Password" onChange={this.handlePassword} />
-						<input type="text" placeholder="Confirm Password" onChange={this.handleConfirmPassword} />
+						<input type="text" placeholder="Name" required onChange={this.handleName} />
+						<input type="text" placeholder="Email" required onChange={this.handleEmail} />
+						<input type="text" placeholder="Password" required onChange={this.handlePassword} />
+						<input type="text" placeholder="Confirm Password" required onChange={this.handleConfirmPassword} />
 						<StyledLink to="/order">
 							<Button onClick={this.handleSignUp}>Sign-Up</Button>
 						</StyledLink>

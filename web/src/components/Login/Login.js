@@ -1,36 +1,64 @@
 import React from "react";
+import { LoginBanner, LoginWrapperStyled, LoginStyled, LoginHeader, InputStyling,} from './LoginStyled';
+import { Button, StyledLink, SignupLink } from '../Button';
+import axios from 'axios';
 
-import {
-  LoginBanner,
-  LoginWrapperStyled,
-  LoginStyled,
-  LoginHeader,
-  InputStyling,
-} from './LoginStyled';
+export default class Login extends React.Component {
+  state = {
+    email: '',
+    password: '' 
+  };
 
-import {
-  Button,
-  StyledLink,
-  SignupLink,
-} from '../Button';
+  handleEmail = (e) => {
+    this.setState({
+      ...this.state, 
+      email: e.target.value
+    });
+  };
 
-export const Login = () => (
-         <LoginBanner>
-           <LoginWrapperStyled>
-             <LoginStyled>
-               <LoginHeader>Login</LoginHeader>
-               <InputStyling>
-                 <input type="text" placeholder="Email" />
-                 <input type="text" placeholder="Password" />
-               </InputStyling>
-               <StyledLink to="/order">
-                 <Button>Login</Button>
-               </StyledLink>
-               <p>
-                 <SignupLink to="/signup">Need to Sign-Up?</SignupLink>
-               </p>
-             </LoginStyled>
-           </LoginWrapperStyled>
-         </LoginBanner>
-       );
-
+  handlePassword = (e) => {
+    this.setState({
+      ...this.state, 
+      password: e.target.value
+    });
+    
+  };
+  //MICHAEL TO CONTINUE WITH THE BELOW FUNCTION
+  handleLogin = (e) => {
+    const user = {
+			email: this.state.email,
+			password: this.state.password	
+		};
+    axios.post('/api/auth/get_token', {user})
+    .then(resp => {
+      console.log('Got Token')
+      console.log(resp.data.token);
+    })
+    .catch(err => {
+      console.log('Failed to create user with error: ')
+      console.log(err);
+    });
+  }
+  render(){
+    return(
+    <LoginBanner>
+      <LoginWrapperStyled>
+        <LoginStyled>
+          <LoginHeader>Login</LoginHeader>
+          <InputStyling>
+            <input type="text" placeholder="Email" onChange={this.handleEmail}/>
+            <input type="text" placeholder="Password" onChange={this.handlePassword} />
+          </InputStyling>
+          <StyledLink to="/order">
+            <Button onClick={this.handleLogin}>Login</Button>
+          </StyledLink>
+          <p>
+            <SignupLink to="/signup">Need to Sign-Up?</SignupLink>
+          </p>
+        </LoginStyled>
+      </LoginWrapperStyled>
+    </LoginBanner>
+    )
+  }
+  
+}

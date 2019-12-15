@@ -4,7 +4,7 @@ import { SummerHome } from './components/Home/SummerHome';
 // import {WinterHome} from './components/Home/WinterHome';
 import { Order } from './pages/Order';
 import { Purchase } from './pages/Purchase';
-import { Login } from './components/Login/Login';
+import Login  from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import { NoMatch } from './pages/NoMatch';
 import { NavigationBar } from './components/NavigationBar';

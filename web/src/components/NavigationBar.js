@@ -43,7 +43,11 @@ export const NavigationBar = () => (
             <Nav.Link href="/purchase">Purchase</Nav.Link>
           </Nav.Item>
           <Nav.Item>
+            //TO-DO: conditional statement to swap login and log out buttons
+            // if token ?
             <Nav.Link href="/login">Login</Nav.Link>
+            //:
+            // Nav.Link href="/">Logout /Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
