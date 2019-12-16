@@ -31,6 +31,7 @@ export const HeaderWrapper = styled.div`
   padding: 2rem;
   background: #9bf2d67b;
   text-align: center;
+  margin-bottom: 1rem;
 `;
 
 export const HomeHeader = styled.h1`

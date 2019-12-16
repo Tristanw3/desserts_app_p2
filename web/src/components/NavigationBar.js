@@ -37,7 +37,7 @@ export const NavigationBar = () => (
             <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/order">Order</Nav.Link>
+            <Nav.Link href="/menu">Menu</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             //TO-DO: conditional statement to swap login and log out buttons

@@ -1,6 +1,6 @@
 import React from 'react';
-import { SignupBanner, SignupWrapperStyled, SignupStyled, SignupHeader } from './SignupStyled';
-import { Button, StyledLink, SignupLink } from '../Button';
+import { SignupPage, AquaBanner, PinkContainer, SignupStyled, SignupHeader, YellowBanner } from './SignupStyled';
+import { Button, StyledLink, SignupLink, InputStyling } from '../Button';
 import axios from 'axios';
 
 export default class Signup extends React.Component {
@@ -53,14 +53,19 @@ export default class Signup extends React.Component {
 
 	render() {
 		return (
-			<SignupBanner>
-				<SignupWrapperStyled>
+			<SignupPage>
+				<AquaBanner/>
+				<PinkContainer>
 					<SignupStyled>
 						<SignupHeader>Sign-Up</SignupHeader>
-						<input type="text" placeholder="Name" required onChange={this.handleName} />
-						<input type="text" placeholder="Email" required onChange={this.handleEmail} />
-						<input type="text" placeholder="Password" required onChange={this.handlePassword} />
-						<input type="text" placeholder="Confirm Password" required onChange={this.handleConfirmPassword} />
+
+						<InputStyling>
+							<input type="text" placeholder="Name" required onChange={this.handleName} />
+							<input type="text" placeholder="Email" required onChange={this.handleEmail} />
+							<input type="text" placeholder="Password" required onChange={this.handlePassword} />
+							<input type="text" placeholder="Confirm Password" required onChange={this.handleConfirmPassword} />
+						</InputStyling>
+						
 						<StyledLink to="/menu">
 							<Button onClick={this.handleSignUp}>Sign-Up</Button>
 						</StyledLink>
@@ -68,8 +73,9 @@ export default class Signup extends React.Component {
 							<SignupLink to="/login">Already have an account?</SignupLink>
 						</p>
 					</SignupStyled>
-				</SignupWrapperStyled>
-			</SignupBanner>
+				</PinkContainer>
+				<YellowBanner/>
+			</SignupPage>
 		);
 	}
 }
