@@ -23,12 +23,14 @@ export default class Login extends React.Component {
     });
     
   };
+
   //MICHAEL TO CONTINUE WITH THE BELOW FUNCTION
   handleLogin = (e) => {
     const user = {
 			email: this.state.email,
 			password: this.state.password	
-		};
+    };
+    console.log(user)
     axios.post('/api/auth/get_token', {user})
     .then(resp => {
       console.log('Got Token')
