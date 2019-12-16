@@ -49,7 +49,7 @@ export default class Login extends React.Component {
             <input type="text" placeholder="Email" onChange={this.handleEmail}/>
             <input type="text" placeholder="Password" onChange={this.handlePassword} />
           </InputStyling>
-          <StyledLink to="/order">
+          <StyledLink to="/menu">
             <Button onClick={this.handleLogin}>Login</Button>
           </StyledLink>
           <p>

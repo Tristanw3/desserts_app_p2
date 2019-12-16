@@ -61,7 +61,7 @@ export default class Signup extends React.Component {
 						<input type="text" placeholder="Email" required onChange={this.handleEmail} />
 						<input type="text" placeholder="Password" required onChange={this.handlePassword} />
 						<input type="text" placeholder="Confirm Password" required onChange={this.handleConfirmPassword} />
-						<StyledLink to="/order">
+						<StyledLink to="/menu">
 							<Button onClick={this.handleSignUp}>Sign-Up</Button>
 						</StyledLink>
 						<p>
