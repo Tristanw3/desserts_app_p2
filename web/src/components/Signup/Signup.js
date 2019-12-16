@@ -69,9 +69,7 @@ export default class Signup extends React.Component {
 						<StyledLink to="/menu">
 							<Button onClick={this.handleSignUp}>Sign-Up</Button>
 						</StyledLink>
-						<p>
-							<SignupLink to="/login">Already have an account?</SignupLink>
-						</p>
+						<p><SignupLink to="/login">Already have an account?</SignupLink></p>
 					</SignupStyled>
 				</PinkContainer>
 				<YellowBanner/>
