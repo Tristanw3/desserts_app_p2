@@ -1,6 +1,6 @@
 import React from "react";
-import { LoginBanner, LoginWrapperStyled, LoginStyled, LoginHeader, InputStyling,} from './LoginStyled';
-import { Button, StyledLink, SignupLink } from '../Button';
+import { LoginPage, YellowBanner, PinkContainer, LoginStyled, LoginHeader, AquaBanner} from './LoginStyled';
+import { Button, StyledLink, SignupLink, InputStyling } from '../Button';
 import axios from 'axios';
 
 export default class Login extends React.Component {
@@ -43,23 +43,27 @@ export default class Login extends React.Component {
   }
   render(){
     return(
-    <LoginBanner>
-      <LoginWrapperStyled>
-        <LoginStyled>
-          <LoginHeader>Login</LoginHeader>
-          <InputStyling>
-            <input type="text" placeholder="Email" onChange={this.handleEmail}/>
-            <input type="text" placeholder="Password" onChange={this.handlePassword} />
-          </InputStyling>
-          <StyledLink to="/order">
-            <Button onClick={this.handleLogin}>Login</Button>
-          </StyledLink>
-          <p>
-            <SignupLink to="/signup">Need to Sign-Up?</SignupLink>
-          </p>
-        </LoginStyled>
-      </LoginWrapperStyled>
-    </LoginBanner>
+    <LoginPage>
+      <YellowBanner/>
+
+      <PinkContainer>
+            <LoginStyled>
+              <LoginHeader>Login</LoginHeader>
+              <InputStyling>
+                <input type="text" placeholder="Email" onChange={this.handleEmail} />
+                <input type="text" placeholder="Password" onChange={this.handlePassword} />
+              </InputStyling>
+              <StyledLink to="/menu">
+                <Button onClick={this.handleLogin}>Login</Button>
+              </StyledLink>
+              <p>
+                <SignupLink to="/signup">Need to Sign-Up?</SignupLink>
+              </p>
+            </LoginStyled>
+      </PinkContainer>
+        
+      <AquaBanner/>
+    </LoginPage>
     )
   }
   

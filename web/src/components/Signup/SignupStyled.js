@@ -1,30 +1,35 @@
 import styled from 'styled-components';
 
-export const SignupBanner = styled.div`
+export const SignupPage = styled.div`
   height: 90vh;
+`;
+
+export const YellowBanner = styled.div`
+  height: 15vh;
   background: #f2e266;
 `;
 
-export const SignupWrapperStyled = styled.section`
+export const AquaBanner = styled.div`
+  height: 15vh;
+  background: #9bf2d7;
+`;
+
+export const PinkContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;  
-  background-color: #9bf2d7;
-  height: 50vh;
+  background-color: #ffa8ca;
+  height: 60vh;
+  width: 100%;
 `;
 
 export const SignupStyled = styled.section`
-  margin-top: 20vh; 
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 50vh;
-  width: 100%;
-  background: #ffa8ca;
-  padding: 2rem;
 `;
 
 export const SignupHeader = styled.h1`
@@ -35,14 +40,32 @@ export const SignupHeader = styled.h1`
   margin-bottom: 1.5rem;
 `;
 
-export const ButtonSignup = styled.button`
-  background:hotpink;
-  border-radius: 30px;
-  border: 3px solid white;
-  color: white;
-  font-weight: 600;
-  font-size: 1.5rem;
-  padding: 0.25em 1em;
-  box-shadow: 4px 4px #222;
-  width: 300px;
+export const InputStyling = styled.div`
+  input {
+    display: block;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 1rem;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 100px;
+    text-align: center;
+    font-size: 20px;
+    padding: 1.2rem;
+  }
+
+  input:hover {
+    background: white;
+  }
+
+  textarea:focus,
+  input:focus {
+    color: hotpink;
+  }
+
+  input,
+  select,
+  textarea {
+    color: #222;
+  }
 `;

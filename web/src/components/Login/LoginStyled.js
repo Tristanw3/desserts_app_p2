@@ -1,30 +1,35 @@
 import styled from 'styled-components';
 
-export const LoginBanner = styled.div`
+export const LoginPage = styled.div`
   height: 90vh;
+`;
+
+export const YellowBanner = styled.div`
+  height: 20vh;
+  background: #f2e266;
+`;
+
+export const AquaBanner = styled.div`
+  height: 20vh;
   background: #9bf2d7;
 `;
 
-export const LoginWrapperStyled = styled.section`
+export const PinkContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;  
-  background-color: #f2e266;
+  background-color: #ffa8ca;
   height: 50vh;
+  width: 100%;
 `;
 
 export const LoginStyled = styled.section`
-  /* margin-top: 20vh;  */
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 50vh;
-  width: 100%;
-  background: #ffa8ca;
-  padding: 2rem;
 `;
 
 export const LoginHeader = styled.h1`
@@ -33,33 +38,4 @@ export const LoginHeader = styled.h1`
   color: #222;
   text-shadow: 4px 4px hotpink;
   margin-bottom: 1.5rem;
-`;
-
-export const InputStyling = styled.div`
-  input {
-    width: 300px;
-    height: 30px;
-    margin-bottom: 10px;
-    border: none;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 100px;
-    text-align: center;
-    font-size: 20px;
-    padding: 1.2rem;
-  }
-
-  input:hover {
-    background: white;
-  }
-
-  textarea:focus,
-  input:focus {
-    color: hotpink;
-  }
-
-  input,
-  select,
-  textarea {
-    color: hotpink;
-  }
 `;
