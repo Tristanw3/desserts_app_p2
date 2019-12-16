@@ -2886,3 +2886,157 @@ puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
 puma (4.3.1) lib/puma/server.rb:472:in `process_client'
 puma (4.3.1) lib/puma/server.rb:328:in `block in run'
 puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/users" for 127.0.0.1 at 2019-12-16 20:11:48 +1100
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create_user as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+Completed 422 Unprocessable Entity in 51ms (Views: 0.3ms | ActiveRecord: 19.8ms | Allocations: 11155)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:12:00 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 935)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-12-16 20:25:53 +1100
+Processing by UsersController#create_user as HTML
+  Parameters: {"user"=>{"name"=>"tristan", "email"=>"tristan@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tristan@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+Completed 422 Unprocessable Entity in 279ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 3129)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:26:23 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"user"=>{"email"=>"tristan@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 890)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-12-16 20:28:23 +1100
+Processing by UsersController#create_user as HTML
+  Parameters: {"user"=>{"name"=>"test-user", "email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Create (11.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test-user"], ["email", "test@email.com"], ["password_digest", "$2a$12$rDsNpYTDetfhM2vPcv1gT.FRmM2gk4iw4uLsW87.jBTzdy9TXczuO"], ["created_at", "2019-12-16 09:28:23.590580"], ["updated_at", "2019-12-16 09:28:23.590580"]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+Completed 201 Created in 339ms (Views: 0.7ms | ActiveRecord: 14.1ms | Allocations: 3510)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:28:36 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 789)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:31:38 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test", "password"=>"[FILTERED]", "user"=>{"email"=>"test"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 754)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:32:19 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 283ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 821)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:37:08 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 333ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 807)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:41:52 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 341ms (Views: 24.8ms | ActiveRecord: 0.4ms | Allocations: 811)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:42:07 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 292ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 808)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 20:42:48 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 312ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 807)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 21:01:19 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 287ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 894)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 21:11:51 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 279ms (Views: 0.3ms | ActiveRecord: 5.7ms | Allocations: 4981)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 21:13:34 +1100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 286ms (Views: 0.3ms | ActiveRecord: 6.7ms | Allocations: 4981)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 21:29:54 +1100
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 281ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 4981)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-16 21:35:54 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 288ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 903)
+
+
