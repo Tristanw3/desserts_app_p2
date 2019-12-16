@@ -16,6 +16,7 @@ export default class Login extends React.Component {
 		});
 	};
 
+<<<<<<< HEAD
 	handlePassword = (e) => {
 		this.setState({
 			...this.state,
@@ -45,6 +46,37 @@ export default class Login extends React.Component {
 		return (
 			<LoginPage>
 				<YellowBanner />
+=======
+  handlePassword = (e) => {
+    this.setState({
+      ...this.state, 
+      password: e.target.value
+    });
+    
+  };
+
+  //MICHAEL TO CONTINUE WITH THE BELOW FUNCTION
+  handleLogin = (e) => {
+    const user = {
+			email: this.state.email,
+			password: this.state.password	
+    };
+    console.log(user)
+    axios.post('/api/auth/get_token', {user})
+    .then(resp => {
+      console.log('Got Token')
+      console.log(resp.data.token);
+    })
+    .catch(err => {
+      console.log('Failed to create user with error: ')
+      console.log(err);
+    });
+  }
+  render(){
+    return(
+    <LoginPage>
+      <YellowBanner/>
+>>>>>>> 401c4bdcba0e875f62a84bce3014f3735f9da75b
 
 				<PinkContainer>
 					<LoginStyled>
