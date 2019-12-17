@@ -5,13 +5,17 @@ export const MenuCard = styled.div`
 	justify-content: center;
 	align-items: center;
 	background: #ffa8ca;
-	height: 300px;
-	flex-basis: 50%;
+	height: 45vh;
+	width: 50%;
 	box-sizing: border-box;
 
 	&:hover {
 		background: hotpink;
 	}
+
+	@media (max-width: 1000px) {
+    width: 100%;
+    }
 `;
 
 export const Food = styled.div`
