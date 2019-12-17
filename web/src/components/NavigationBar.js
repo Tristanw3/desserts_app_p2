@@ -40,7 +40,8 @@ export const NavigationBar = () => (
 						<Nav.Link href="/menu">Menu</Nav.Link>
 					</Nav.Item>
 					<Nav.Item>
-						{sessionStorage.loggedInStatus ? (
+						{sessionStorage.auth ? (
+							/* ADD AUTH DELETE HERE*/
 							<Nav.Link href="/">Logout </Nav.Link>
 						) : (
 							<Nav.Link href="/login">Login</Nav.Link>
@@ -48,7 +49,7 @@ export const NavigationBar = () => (
 					</Nav.Item>
 					<Nav.Item>
 						<Nav.Link href="/purchase">
-							<i class="fas fa-shopping-cart" />
+							<i className="fas fa-shopping-cart" />
 						</Nav.Link>
 					</Nav.Item>
 				</Nav>
