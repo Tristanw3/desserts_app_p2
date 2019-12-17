@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 
 export const MenuPage = styled.div`
@@ -67,6 +68,5 @@ export const MenuItem4 = styled.div`
 
 export const MenuText = styled.div`
   display: block;
-
 `;
 

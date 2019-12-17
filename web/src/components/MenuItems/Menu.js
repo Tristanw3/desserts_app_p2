@@ -1,13 +1,15 @@
 import React from "react";
 
-import {
-  MenuPage,
-  MenuItem1,
-  MenuItem2,
-  MenuItem3,
-  MenuItem4,
-  MenuText,
-} from './MenuStyled';
+// import {
+//   MenuPage,
+//   MenuItem1,
+//   MenuItem2,
+//   MenuItem3,
+//   MenuItem4,
+//   MenuText,
+// } from './MenuStyled';
+
+import {MenuItem} from "./MenuItem";
 
 import {
   Button,

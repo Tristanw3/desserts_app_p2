@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import axios from 'axios';
 import { SummerHome } from './components/Home/SummerHome';
 // import {WinterHome} from './components/Home/WinterHome';
-import { MenuItems } from './components/MenuItems/Menu';
+// import { MenuItems } from './components/MenuItems/Menu';
 import { Purchase } from './pages/Purchase';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import { NoMatch } from './pages/NoMatch';
 import { NavigationBar } from './components/NavigationBar';
+import {MenuPageLayout} from './components/Menu/MenuPage';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -81,8 +82,8 @@ class App extends Component {
 						<Route exact path="/" component={SummerHome} >
 							<SummerHome user={userProps} cart={cartProps}></SummerHome>
 						</Route>
-						<Route path="/menu" component={MenuItems}>
-							<MenuItems user={userProps} cart={cartProps}></MenuItems>
+						<Route path="/menu" component={MenuPageLayout}>
+							<MenuPageLayout user={userProps} cart={cartProps}></MenuPageLayout>
 						</Route>
 						<Route path="/purchase" component={Purchase}>
 							<Purchase user={userProps} cart={cartProps}></Purchase>
