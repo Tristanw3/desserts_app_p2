@@ -5,10 +5,11 @@ import { SummerHome } from './components/Home/SummerHome';
 // import {WinterHome} from './components/Home/WinterHome';
 // import { MenuItems } from './components/MenuItems/Menu';
 import { Purchase } from './pages/Purchase';
+import Account from './components/Account/Account';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import { NoMatch } from './pages/NoMatch';
-import { NavigationBar } from './components/NavigationBar';
+import NavigationBar from './components/NavigationBar';
 import MenuPage from './components/Menu/MenuPage';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -79,7 +80,7 @@ class App extends Component {
 
 		return (
 			<React.Fragment>
-				<NavigationBar />
+				<NavigationBar user={userProps}/>
 				<Router>
 					<Switch>
 						<Route exact path="/" component={SummerHome}>
@@ -90,6 +91,9 @@ class App extends Component {
 						</Route>
 						<Route path="/purchase" component={Purchase}>
 							<Purchase user={userProps} cart={cartProps} />
+						</Route>
+						<Route path="/account" component={Account}>
+							<Signup user={userProps} cart={cartProps} />
 						</Route>
 						<Route path="/login" component={Login}>
 							<Login user={userProps} cart={cartProps} />

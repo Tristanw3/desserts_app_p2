@@ -26,34 +26,55 @@ const Styles = styled.div`
 	}
 `;
 
-export const NavigationBar = () => (
-	<Styles>
-		<Navbar expand="lg">
-			<Navbar.Brand href="/">Sweets To Go</Navbar.Brand>
-			<Navbar.Toggle aria-controls="basic-navbar-nav" />
-			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav className="ml-auto">
-					<Nav.Item>
-						<Nav.Link href="/">Home</Nav.Link>
-					</Nav.Item>
-					<Nav.Item>
-						<Nav.Link href="/menu">Menu</Nav.Link>
-					</Nav.Item>
-					<Nav.Item>
-						{sessionStorage.auth ? (
-							/* ADD AUTH DELETE HERE*/
-							<Nav.Link href="/">Logout </Nav.Link>
-						) : (
-							<Nav.Link href="/login">Login</Nav.Link>
-						)}
-					</Nav.Item>
-					<Nav.Item>
-						<Nav.Link href="/purchase">
-							<i className="fas fa-shopping-cart" />
-						</Nav.Link>
-					</Nav.Item>
-				</Nav>
-			</Navbar.Collapse>
-		</Navbar>
-	</Styles>
-);
+export default class NavigationBar extends React.Component {
+	
+	state = {
+		isLoggedIn: false
+	}
+
+	handleLogoutBtn = () =>{
+		console.log(this.props)
+		this.setState(...this.state, this.state.isLoggedIn, true)
+		this.props.user.logout()
+	};
+
+	render(){
+		return(
+			<>
+			<Styles>
+				<Navbar expand="lg">
+					<Navbar.Brand href="/">Sweets To Go</Navbar.Brand>
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="ml-auto">
+							<Nav.Item>
+								<Nav.Link href="/">Home</Nav.Link>
+							</Nav.Item>
+							<Nav.Item>
+								<Nav.Link href="/menu">Menu</Nav.Link>
+							</Nav.Item>
+							<Nav.Item>
+								{sessionStorage.auth && this.state.isLoggedIn ? (
+									<Nav.Link href="/" onClick={this.handleLogoutBtn}>Logout </Nav.Link>
+								) : (
+									<Nav.Link href="/login">Login</Nav.Link>
+								)}
+							</Nav.Item>
+							<Nav.Item>
+								{sessionStorage.auth ? (
+									<Nav.Link href="/account">Account </Nav.Link>
+								):(null)}
+							</Nav.Item>
+							<Nav.Item>
+								<Nav.Link href="/purchase">
+									<i className="fas fa-shopping-cart" />
+								</Nav.Link>
+							</Nav.Item>
+						</Nav>
+					</Navbar.Collapse>
+				</Navbar>
+			</Styles>
+			</>
+		)	
+	}
+}
