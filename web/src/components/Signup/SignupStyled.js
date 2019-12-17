@@ -5,12 +5,12 @@ export const SignupPage = styled.div`
 `;
 
 export const YellowBanner = styled.div`
-  height: 15vh;
+  height: 10vh;
   background: #f2e266;
 `;
 
 export const AquaBanner = styled.div`
-  height: 15vh;
+  height: 10vh;
   background: #9bf2d7;
 `;
 
@@ -20,7 +20,7 @@ export const PinkContainer = styled.section`
   justify-content: center;
   align-items: center;  
   background-color: #ffa8ca;
-  height: 60vh;
+  height: 70vh;
   width: 100%;
 `;
 
