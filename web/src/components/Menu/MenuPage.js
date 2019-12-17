@@ -1,26 +1,17 @@
-import React from "react";
+import React, { Component } from 'react';
 
-import {
-  MenuPage,
-  MenuItem,
-  Food,
-  MenuText,
-} from './MenuStyled';
+import MenuItem from './MenuItem';
+import { MenuPageStyling } from './MenuPageStyled';
 
-import {
-  Button,
-  StyledLink,
-} from '../Button';
-
-export const MenuPageLayout = () => (
-  <MenuPage>
-    <MenuItem>
-      <Food />
-      <MenuText>
-        <h2><b>Iced Coffee</b> ... $5.00</h2>
-        <StyledLink to="/purchase"><Button>Add to cart</Button></StyledLink>
-      </MenuText>
-    </MenuItem>
-
-  </MenuPage>
-);
+export default class MenuPage extends Component {
+	render() {
+		return (
+			<MenuPageStyling>
+				<MenuItem name="Coffee" cost="2.00" />
+				<MenuItem name="name2" cost="3.00" />
+				<MenuItem name="name3" cost="4.00" />
+				<MenuItem name="name4" cost="5.00" />
+			</MenuPageStyling>
+		);
+	}
+}

@@ -8,7 +8,7 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import { NoMatch } from './pages/NoMatch';
 import { NavigationBar } from './components/NavigationBar';
-import {MenuPageLayout} from './components/Menu/MenuPage';
+import MenuPage from './components/Menu/MenuPage';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -20,7 +20,7 @@ class App extends Component {
 				<Router>
 					<Switch>
 						<Route exact path="/" component={SummerHome} />
-						<Route path="/menu" component={MenuPageLayout} />
+						<Route path="/menu" component={MenuPage} />
 						<Route path="/purchase" component={Purchase} />
 						<Route path="/login" component={Login} />
 						<Route path="/signup" component={Signup} />
