@@ -13,7 +13,7 @@ export default class PurchasePage extends Component {
             <FoodImage />
             <FoodTextLayout>
               <FoodName>Iced Coffee</FoodName>
-              <FoodCost>...$5.00</FoodCost>
+              <FoodCost>... $5.00</FoodCost>
             </FoodTextLayout>
           </PurchaseCard>
 
