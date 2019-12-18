@@ -1,6 +1,24 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
+export const MenuButton = styled.button`
+  background:hotpink;
+  border-radius: 40px;
+  border: 3px solid white;
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0 0 1rem 2rem;
+  padding: 0.25em 1em;
+  box-shadow: 4px 4px #222;
+  width: 300px;
+
+  &:hover{
+    box-shadow: none;
+    background: #f2e266;
+  }
+`;
+
 export const Button = styled.button`
   background:hotpink;
   border-radius: 40px;

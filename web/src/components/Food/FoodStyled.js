@@ -7,7 +7,7 @@ export const FoodImage = styled.div`
 		no-repeat center;
 	background-size: 120%;
 	border-radius: 15%;
-	margin: 3rem;
+	/* margin: 3rem; */
 
 	&:hover {
 		background-size: 130%;
@@ -16,6 +16,8 @@ export const FoodImage = styled.div`
 
 export const FoodTextLayout = styled.div`
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 `;
 

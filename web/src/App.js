@@ -4,13 +4,13 @@ import axios from 'axios';
 import { SummerHome } from './components/Home/SummerHome';
 // import {WinterHome} from './components/Home/WinterHome';
 // import { MenuItems } from './components/MenuItems/Menu';
-import { Purchase } from './pages/Purchase';
 import Account from './components/Account/Account';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import { NoMatch } from './pages/NoMatch';
 import NavigationBar from './components/NavigationBar';
 import MenuPage from './components/Menu/MenuPage';
+import PurchasePage from './components/Cart/PurchasePage';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -89,8 +89,8 @@ class App extends Component {
 						<Route path="/menu" component={MenuPage}>
 							<MenuPage user={userProps} cart={cartProps} />
 						</Route>
-						<Route path="/purchase" component={Purchase}>
-							<Purchase user={userProps} cart={cartProps} />
+						<Route path="/purchase" component={PurchasePage}>
+							<PurchasePage user={userProps} cart={cartProps} />
 						</Route>
 						<Route path="/account" component={Account}>
 							<Signup user={userProps} cart={cartProps} />
