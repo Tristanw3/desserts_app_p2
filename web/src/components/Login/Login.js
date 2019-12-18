@@ -2,17 +2,17 @@ import React from 'react';
 import { LoginPage, YellowBanner, PinkContainer, LoginStyled, LoginHeader, AquaBanner } from './LoginStyled';
 import { Button, StyledLink, SignupLink, InputStyling } from '../Button';
 
-
 export default class Login extends React.Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 
 		// this.handleLoginBtn = this.handleLoginBtn.bind(this);
 
-		this.state = { 
-		email: '',
-		password: ''}
-	};
+		this.state = {
+			email: '',
+			password: ''
+		};
+	}
 
 	handleEmailForm = (e) => {
 		this.setState({
@@ -27,11 +27,12 @@ export default class Login extends React.Component {
 			password: e.target.value
 		});
 	};
-	
-	handleLoginBtn = () =>{
-		console.log(this.props)
-		this.props.user.login(this.state.email, this.state.password)
+
+	handleLoginBtn = () => {
+		console.log(this.props);
+		this.props.user.login(this.state.email, this.state.password);
 	};
+
 	render() {
 		return (
 			<LoginPage>

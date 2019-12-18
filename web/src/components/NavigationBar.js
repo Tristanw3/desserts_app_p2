@@ -27,20 +27,18 @@ const Styles = styled.div`
 `;
 
 export default class NavigationBar extends React.Component {
-	
 	state = {
-		isLoggedIn: false
-	}
-
-	handleLogoutBtn = () =>{
-		console.log(this.props)
-		this.setState(...this.state, this.state.isLoggedIn, true)
-		this.props.user.logout()
+		isLoggedIn: this.props.user.isLoggedIn
 	};
 
-	render(){
-		return(
-			<>
+	handleLogoutBtn = () => {
+		this.props.user.logout();
+	};
+
+	render() {
+		console.log(this.props.isLoggedIn);
+
+		return (
 			<Styles>
 				<Navbar expand="lg">
 					<Navbar.Brand href="/">Sweets To Go</Navbar.Brand>
@@ -54,16 +52,16 @@ export default class NavigationBar extends React.Component {
 								<Nav.Link href="/menu">Menu</Nav.Link>
 							</Nav.Item>
 							<Nav.Item>
-								{sessionStorage.auth && this.state.isLoggedIn ? (
-									<Nav.Link href="/" onClick={this.handleLogoutBtn}>Logout </Nav.Link>
+								{this.state.isLoggedIn ? (
+									<Nav.Link href="/" onClick={this.handleLogoutBtn}>
+										Logout
+									</Nav.Link>
 								) : (
 									<Nav.Link href="/login">Login</Nav.Link>
 								)}
 							</Nav.Item>
 							<Nav.Item>
-								{sessionStorage.auth ? (
-									<Nav.Link href="/account">Account </Nav.Link>
-								):(null)}
+								{sessionStorage.auth ? <Nav.Link href="/account">Account </Nav.Link> : null}
 							</Nav.Item>
 							<Nav.Item>
 								<Nav.Link href="/purchase">
@@ -74,7 +72,6 @@ export default class NavigationBar extends React.Component {
 					</Navbar.Collapse>
 				</Navbar>
 			</Styles>
-			</>
-		)	
+		);
 	}
 }

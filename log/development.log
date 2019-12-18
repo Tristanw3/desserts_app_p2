@@ -10146,3 +10146,1655 @@ puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
 puma (4.3.1) lib/puma/server.rb:472:in `process_client'
 puma (4.3.1) lib/puma/server.rb:328:in `block in run'
 puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 21:22:45 +1100
+  [1m[35m (21.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 389ms (Views: 0.4ms | ActiveRecord: 80.8ms | Allocations: 5345)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 21:22:46 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 2873)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 21:22:47 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 21:23:04 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 348)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 21:23:09 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 21:23:11 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 21:48:12 +1100
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 326ms (Views: 0.5ms | ActiveRecord: 24.2ms | Allocations: 4982)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:48:12 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (26.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 32ms (ActiveRecord: 27.4ms | Allocations: 1377)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:48:14 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 9ms (ActiveRecord: 4.9ms | Allocations: 1254)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:49:01 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.9ms | Allocations: 1254)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:49:06 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (96.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (98.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 199ms (ActiveRecord: 195.3ms | Allocations: 1254)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 21:52:23 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 330ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 806)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:52:24 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 5ms (ActiveRecord: 1.1ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:52:26 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 6ms (ActiveRecord: 2.5ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 21:52:43 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 340ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 806)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:52:44 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:53:58 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 9ms (ActiveRecord: 5.4ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:55:35 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 10ms (ActiveRecord: 1.1ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 21:55:47 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 322ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 806)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:55:47 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:55:50 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 21:57:17 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 318ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 806)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 21:57:18 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:03:41 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.9ms | Allocations: 1326)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:03:46 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (23.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 37ms (ActiveRecord: 33.6ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:03:58 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 290ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 811)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:03:59 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:04:02 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 7ms (ActiveRecord: 2.0ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:08:05 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (121.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 131ms (ActiveRecord: 123.8ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:08:27 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 10ms (ActiveRecord: 4.1ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:09:12 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (27.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 36ms (ActiveRecord: 31.2ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:09:58 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>{"dispatchConfig"=>nil, "_targetInst"=>nil, "_dispatchListeners"=>nil, "_dispatchInstances"=>nil, "nativeEvent"=>nil, "type"=>nil, "target"=>nil, "eventPhase"=>nil, "bubbles"=>nil, "cancelable"=>nil, "defaultPrevented"=>nil, "isTrusted"=>nil, "view"=>nil, "detail"=>nil, "screenX"=>nil, "screenY"=>nil, "clientX"=>nil, "clientY"=>nil, "pageX"=>nil, "pageY"=>nil, "ctrlKey"=>nil, "shiftKey"=>nil, "altKey"=>nil, "metaKey"=>nil, "button"=>nil, "buttons"=>nil}, "user"=>{"email"=>{"dispatchConfig"=>nil, "_targetInst"=>nil, "_dispatchListeners"=>nil, "_dispatchInstances"=>nil, "nativeEvent"=>nil, "type"=>nil, "target"=>nil, "eventPhase"=>nil, "bubbles"=>nil, "cancelable"=>nil, "defaultPrevented"=>nil, "isTrusted"=>nil, "view"=>nil, "detail"=>nil, "screenX"=>nil, "screenY"=>nil, "clientX"=>nil, "clientY"=>nil, "pageX"=>nil, "pageY"=>nil, "ctrlKey"=>nil, "shiftKey"=>nil, "altKey"=>nil, "metaKey"=>nil, "button"=>nil, "buttons"=>nil}}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 338)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/users_controller.rb:50:in `get_token'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:10:19 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>{"dispatchConfig"=>nil, "_targetInst"=>nil, "_dispatchListeners"=>nil, "_dispatchInstances"=>nil, "nativeEvent"=>nil, "type"=>nil, "target"=>nil, "eventPhase"=>nil, "bubbles"=>nil, "cancelable"=>nil, "defaultPrevented"=>nil, "isTrusted"=>nil, "view"=>nil, "detail"=>nil, "screenX"=>nil, "screenY"=>nil, "clientX"=>nil, "clientY"=>nil, "pageX"=>nil, "pageY"=>nil, "ctrlKey"=>nil, "shiftKey"=>nil, "altKey"=>nil, "metaKey"=>nil, "button"=>nil, "buttons"=>nil}, "user"=>{"email"=>{"dispatchConfig"=>nil, "_targetInst"=>nil, "_dispatchListeners"=>nil, "_dispatchInstances"=>nil, "nativeEvent"=>nil, "type"=>nil, "target"=>nil, "eventPhase"=>nil, "bubbles"=>nil, "cancelable"=>nil, "defaultPrevented"=>nil, "isTrusted"=>nil, "view"=>nil, "detail"=>nil, "screenX"=>nil, "screenY"=>nil, "clientX"=>nil, "clientY"=>nil, "pageX"=>nil, "pageY"=>nil, "ctrlKey"=>nil, "shiftKey"=>nil, "altKey"=>nil, "metaKey"=>nil, "button"=>nil, "buttons"=>nil}}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 358)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/users_controller.rb:50:in `get_token'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:10:59 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (104.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 421ms (Views: 0.2ms | ActiveRecord: 104.0ms | Allocations: 818)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:11:00 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1243)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:12:49 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 5ms (ActiveRecord: 1.1ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:13:02 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 312ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 806)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:13:02 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 17ms (ActiveRecord: 0.6ms | Allocations: 1242)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:13:19 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 12ms (ActiveRecord: 8.3ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:20:30 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 8ms (ActiveRecord: 2.4ms | Allocations: 1325)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:20:34 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 6ms (ActiveRecord: 1.1ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:20:52 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (99.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 502ms (Views: 0.2ms | ActiveRecord: 99.7ms | Allocations: 811)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:20:53 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:20:56 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:25:58 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 29ms (ActiveRecord: 1.0ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:26:12 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 314ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 806)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:26:12 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 4ms (ActiveRecord: 1.0ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:26:39 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 13ms (ActiveRecord: 1.6ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:26:50 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 315ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 806)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:26:51 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (24.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 29ms (ActiveRecord: 24.9ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:27:55 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1112)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:28:06 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 318ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:28:06 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:28:35 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:28:47 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 321ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 807)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:28:48 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:29:56 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:33:07 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:33:10 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:33:24 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 310ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:33:24 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:34:25 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (87.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 106ms (ActiveRecord: 93.4ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:34:27 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 14ms (ActiveRecord: 7.9ms | Allocations: 1239)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:34:39 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 314ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 806)
+
+
+Started GET "/api/users/$%7Bauth.userId%7D" for 127.0.0.1 at 2019-12-18 22:34:40 +1100
+Processing by UsersController#get_by_id as 
+  Parameters: {"user_id"=>"${auth"}
+  [1m[36mUser Load (25.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 404 Not Found in 29ms (ActiveRecord: 26.3ms | Allocations: 1240)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=${auth):
+  
+app/controllers/users_controller.rb:24:in `get_by_id'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:34:54 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:42:19 +1100
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 1013ms (Views: 0.5ms | ActiveRecord: 140.2ms | Allocations: 4982)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:42:22 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 1832)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:42:38 +1100
+Processing by UsersController#get_by_id as */*
+  Parameters: {"user_id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 34ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 1547)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:43:20 +1100
+Processing by UsersController#get_by_id as */*
+  Parameters: {"user_id"=>"2", "user"=>{}}
+  [1m[36mUser Load (26.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 32ms (Views: 0.6ms | ActiveRecord: 28.2ms | Allocations: 1371)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:45:01 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 307ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 826)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:45:18 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:47:50 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:47:54 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:48:06 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 313ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:48:07 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:48:32 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:51:45 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:51:55 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:52:15 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:52:33 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:52:50 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:52:54 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:53:07 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 341ms (Views: 0.2ms | ActiveRecord: 4.5ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:53:42 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 22:53:56 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 319ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 807)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:54:05 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:54:13 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 22:56:31 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:00:05 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:00:06 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 23:00:20 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 307ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 807)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:00:20 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:02:04 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:03:12 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 23:03:27 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 315ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:03:28 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:03:30 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:03:33 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 23:04:04 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 349ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 807)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:04:05 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:07:39 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:07:41 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 23:07:51 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 324ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 809)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:07:52 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:07:54 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 23:08:10 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (25.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 332ms (Views: 0.2ms | ActiveRecord: 25.1ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:08:10 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:08:45 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 23:08:55 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (30.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 347ms (Views: 0.2ms | ActiveRecord: 30.1ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:08:55 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 347)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:12:39 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 23:12:49 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 308ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:12:50 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 347)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:12:52 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:12:53 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:13:32 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-18 23:13:40 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 317ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 806)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:13:41 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-18 23:13:43 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"api/users/2"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'

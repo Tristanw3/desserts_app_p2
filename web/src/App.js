@@ -31,6 +31,8 @@ class App extends Component {
 	getUser() {
 		let auth = JSON.parse(sessionStorage.getItem('auth'));
 		if (!auth) return;
+		console.log(auth);
+
 		axios
 			.get(`/api/users/${auth.userId}`, {
 				headers: { Authorization: `Bearer ${auth.token}` }
@@ -41,12 +43,15 @@ class App extends Component {
 					isLoggedIn: true
 				});
 				return <Redirect to="/" />;
+			})
+			.catch((err) => {
+				console.log(err);
 			});
 	}
 
 	handleLogin(email, password) {
 		axios
-			.post(`/api/auth/get_token`, {
+			.post('/api/auth/get_token', {
 				email: email,
 				password: password
 			})
@@ -61,7 +66,7 @@ class App extends Component {
 	}
 
 	handleLogout() {
-		sessionStorage.setItem('auth', null);
+		sessionStorage.clear();
 		this.setState({ currentUser: null, isLoggedIn: false });
 	}
 
@@ -80,7 +85,7 @@ class App extends Component {
 
 		return (
 			<React.Fragment>
-				<NavigationBar user={userProps}/>
+				<NavigationBar user={userProps} />
 				<Router>
 					<Switch>
 						<Route exact path="/" component={SummerHome}>
