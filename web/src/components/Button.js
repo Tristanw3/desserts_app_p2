@@ -1,6 +1,50 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
+export const Add = styled.button`
+  width: 75px;
+  height: 50px;
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
+  background:#9bf2d7;
+  border-radius: 40px;
+  border: 3px solid white;
+  color: white;
+  font-weight: 600;
+  font-size: 3rem;
+  box-shadow: 4px 4px #222;
+  margin-top: -0.5rem;
+  margin-right: 3rem;
+
+  &:hover{
+    box-shadow: none;
+    background: #f2e266;
+  }
+`;
+
+export const Subtract = styled.button`
+  width: 75px;
+  height: 50px;
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
+  background:hotpink;
+  border-radius: 40px;
+  border: 3px solid white;
+  color: white;
+  font-weight: 600;
+  font-size: 3rem;
+  box-shadow: 4px 4px #222;
+  margin-top: -0.5rem;
+
+  &:hover{
+    box-shadow: none;
+    background: #f2e266;
+  }
+`;
+
+
 export const MenuButton = styled.button`
   background:hotpink;
   border-radius: 40px;
