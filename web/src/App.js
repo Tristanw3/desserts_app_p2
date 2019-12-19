@@ -20,7 +20,9 @@ class App extends Component {
 		let auth = JSON.parse(sessionStorage.getItem('auth'));
 		this.state = {
 			isLoggedIn: !!auth ? true : false,
-			currentUser: null
+			currentUser: null,
+			cart: [],
+			cartCost: 0
 		};
 	}
 
@@ -39,6 +41,7 @@ class App extends Component {
 			})
 			.then((response) => {
 				this.setState({
+					...this.state,
 					currentUser: response.data,
 					isLoggedIn: true
 				});
@@ -67,8 +70,18 @@ class App extends Component {
 
 	handleLogout() {
 		sessionStorage.clear();
-		this.setState({ currentUser: null, isLoggedIn: false });
+		this.setState({ ...this.state, currentUser: null, isLoggedIn: false });
 	}
+
+	handleAddToCart = (obj) => {
+		console.log(this.state);
+
+		let cartArr = this.state.cart.push(obj);
+		// console.log(cartArr);
+		this.setState({ ...this.state, cart: cartArr });
+
+		// console.log(this.state);
+	};
 
 	render() {
 		const userProps = {
@@ -80,7 +93,7 @@ class App extends Component {
 
 		const cartProps = {
 			cartCount: null,
-			addToCart: (item) => this.handleAddToCart(item)
+			addToCart: this.handleAddToCart
 		};
 
 		return (
