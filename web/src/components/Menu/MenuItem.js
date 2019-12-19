@@ -10,7 +10,7 @@ export default class MenuItem extends Component {
 			<MenuCard>
 				<FoodImage />
 				<FoodTextLayout>
-					<FoodName>{this.props.name}</FoodName>
+					<FoodName>{this.props.title}</FoodName>
 					<FoodCost>... {'$' + this.props.cost}</FoodCost>
 					<StyledLink to="/purchase">
 						<MenuButton>Add to cart</MenuButton>
