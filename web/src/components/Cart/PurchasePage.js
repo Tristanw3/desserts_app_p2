@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { FoodTextLayout, FoodImage, FoodName, FoodCost } from '../Food/FoodStyled';
-import {
-	PageSize,
-	AquaBanner,
-	PinkContainer,
-	YellowBanner,
-	PurchaseCard,
-	AddSubtractBlock
-} from './PurchasePageStyled';
+import { PageSize, AquaBanner, PinkContainer, PurchaseCard, AddSubtractBlock, PurchaseNumber } from './PurchasePageStyled';
 import { Add, Subtract, Button } from '../Button';
 import { BackDrop } from '../Modal/ModalStyled';
 import { Modal } from '../Modal/Modal';
@@ -51,8 +44,10 @@ export default class PurchasePage extends Component {
 
 						<AddSubtractBlock>
 							<Add>+</Add>
+							<PurchaseNumber>0</PurchaseNumber>
 							<Subtract>-</Subtract>
 						</AddSubtractBlock>
+						
 					</PurchaseCard>
 				</PinkContainer>
 				<AquaBanner>
