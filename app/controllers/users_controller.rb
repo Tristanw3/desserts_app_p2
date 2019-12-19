@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ApiController
 
     before_action :authorize_request, only: [
         :get_by_id, :update_user, :delete_user

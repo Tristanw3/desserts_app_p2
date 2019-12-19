@@ -27,10 +27,6 @@ const Styles = styled.div`
 `;
 
 export default class NavigationBar extends React.Component {
-	state = {
-		isLoggedIn: this.props.user.isLoggedIn
-	};
-
 	handleLogoutBtn = () => {
 		this.props.user.logout();
 	};
@@ -52,7 +48,7 @@ export default class NavigationBar extends React.Component {
 								<Nav.Link href="/menu">Menu</Nav.Link>
 							</Nav.Item>
 							<Nav.Item>
-								{this.state.isLoggedIn ? (
+								{this.props.user.isLoggedIn ? (
 									<Nav.Link href="/" onClick={this.handleLogoutBtn}>
 										Logout
 									</Nav.Link>
