@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, StyledLink } from '../Button';
-import { ModalWrapper } from './ModalStyled';
+import { Button } from '../Button';
+import { ModalWrapper, ModalText } from './ModalStyled';
 
 export const Modal = (props) => {
   return (
@@ -10,10 +10,14 @@ export const Modal = (props) => {
         opacity: props.show ? '1' : '0'
       }}>
 
-      <h1>Enjoy Your Sweets</h1>
-      <p>Thanks for shopping with us</p>
+      <ModalText>
+        <h1>Enjoy Your Sweets</h1>
+        <p>Thanks for shopping with us</p>
+      </ModalText>
 
-      <StyledLink to="/"><Button onClick={props.close}>Close</Button></StyledLink>
+
+      <Button onClick={props.close}>Close</Button>
+      {/* <StyledLink to="/"><Button onClick={props.close}>Close</Button></StyledLink> */}
 
     </ModalWrapper>
   )

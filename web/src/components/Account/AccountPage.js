@@ -27,7 +27,7 @@ export default class AccountPage extends Component {
                         <FoodThumbnail />
                     </ItemSection>
 
-                    <DateSection>Menu Name</DateSection>
+                    <DateSection>21-Dec-2019</DateSection>
                     <TotalSection>$000</TotalSection>
 
                 </AccountCard>

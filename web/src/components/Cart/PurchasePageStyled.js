@@ -4,9 +4,9 @@ export const PageSize = styled.div`
   height: 90vh;
 `;
 
-export const AquaBanner = styled.div`
+export const YellowBanner = styled.div`
   height: 25vh;
-  background: #9bf2d7;
+  background: #f2e266;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,35 +14,53 @@ export const AquaBanner = styled.div`
   padding: 0;
 `;
 
-export const PinkContainer = styled.section`
+export const ButtonRow = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;  
+`;
+
+export const PinkContainer = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  justify-items: center;
+  align-items: center;
   background-color: #ffa8ca;
   height: 65vh;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    }
 `;
 
 export const PurchaseCard = styled.div`
   box-sizing: border-box;
-  padding: 2rem 1rem;
   border: 2px solid white;
   border-radius: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0 2rem;
+  width: 250px;
+  height: 60vh;
+
+  @media (max-width: 1000px) {
+    margin: 1rem;
+    }
 `;
 
 export const AddSubtractBlock = styled.div`
-  flex-direction: row;
+  display: flex;
+  flex: row;
+  justify-content: space-evenly;
   width: 200px;
 `;
 
 export const PurchaseNumber = styled.div`
   flex-direction: row;
+  margin-top: -0.5rem;
   color: white;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 3rem;
 `;
