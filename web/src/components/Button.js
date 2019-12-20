@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 export const Add = styled.button`
-  width: 75px;
+  width: 50px;
   height: 50px;
   padding: 0;
   line-height: 0;
@@ -14,8 +14,6 @@ export const Add = styled.button`
   font-weight: 600;
   font-size: 3rem;
   box-shadow: 4px 4px #222;
-  margin-top: -0.5rem;
-  margin-right: 3rem;
 
   &:hover{
     box-shadow: none;
@@ -24,19 +22,18 @@ export const Add = styled.button`
 `;
 
 export const Subtract = styled.button`
-  width: 75px;
+  width: 50px;
   height: 50px;
   padding: 0;
   line-height: 0;
   box-sizing: border-box;
-  background:hotpink;
+  background: hotpink;
   border-radius: 40px;
   border: 3px solid white;
   color: white;
   font-weight: 600;
   font-size: 3rem;
   box-shadow: 4px 4px #222;
-  margin-top: -0.5rem;
 
   &:hover{
     box-shadow: none;
@@ -70,7 +67,7 @@ export const Button = styled.button`
   color: white;
   font-weight: 400;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin: 0 1rem 1rem 1rem;
   padding: 0.25em 1em;
   box-shadow: 4px 4px #222;
   width: 300px;
@@ -93,6 +90,7 @@ export const StyledLink = styled(Link)`
 
 export const SignupLink = styled(Link)`
   color: #222;
+  font-size: 1rem;
 
   &:hover{
     color: hotpink;
@@ -110,7 +108,7 @@ export const InputStyling = styled.div`
     background: rgba(255, 255, 255, 0.5);
     border-radius: 100px;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.2rem;;
     padding: 1.2rem;
   }
 
