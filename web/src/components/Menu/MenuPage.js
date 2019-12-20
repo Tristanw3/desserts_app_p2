@@ -36,6 +36,7 @@ export default class MenuPage extends Component {
 				title={food.title}
 				cost={food.cost}
 				image={food.image}
+				background={food.Background}
 			/>
 		));
 

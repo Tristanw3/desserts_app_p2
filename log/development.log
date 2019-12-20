@@ -15934,3 +15934,619 @@ Processing by FoodsController#get as HTML
 Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 2012)
 
 
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 09:13:37 +1100
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 315ms (Views: 0.3ms | ActiveRecord: 11.5ms | Allocations: 4971)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 09:13:37 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 1483)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 09:13:42 +1100
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 09:13:42 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (101.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 173ms (Views: 1.6ms | ActiveRecord: 125.3ms | Allocations: 8660)
+
+
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 17ms (Views: 0.7ms | ActiveRecord: 10.8ms | Allocations: 1434)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-12-21 09:14:55 +1100
+Processing by UsersController#create_user as HTML
+  Parameters: {"user"=>{"name"=>"sam", "email"=>"sam@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Create (3.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "sam"], ["email", "sam@email.com"], ["password_digest", "$2a$12$8L9KRLctwLaRmtLz34x0rumFzVO8MALUyJvHsjn6PGo9a2fK10yDe"], ["created_at", "2019-12-20 22:14:56.065018"], ["updated_at", "2019-12-20 22:14:56.065018"]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+Completed 201 Created in 303ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 3763)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 09:15:19 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"sam@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"sam@email.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 300ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 797)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 09:15:20 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1337)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 09:15:23 +1100
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 09:15:23 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (2.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 2.6ms | Allocations: 1985)
+
+
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 8.7ms | Allocations: 1337)
+
+
+Started GET "/purchase" for 127.0.0.1 at 2019-12-21 09:15:34 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"purchase"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 3176)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 09:15:39 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (0.7ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.7ms | Allocations: 1993)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 09:15:51 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1958)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 09:15:54 +1100
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 09:15:54 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (0.8ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.8ms | Allocations: 1958)
+
+
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 1347)
+
+
+Started GET "/purchase" for 127.0.0.1 at 2019-12-21 09:15:56 +1100
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"purchase"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 09:16:01 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 5.6ms | Allocations: 1336)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 09:16:03 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 8.7ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 09:16:23 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 1337)
+
+
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6857269664146407975)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddBackgroundToFoods (20191220230449)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.8ms)[0m  [1m[35mALTER TABLE "foods" ADD "Background" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191220230449"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6857269664146407975)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (227.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_heroku_development"[0m
+  [1m[35m (224.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_heroku_test"[0m
+  [1m[35m (499.1ms)[0m  [1m[35mCREATE DATABASE "react_rails_heroku_development" ENCODING = 'unicode'[0m
+  [1m[35m (308.3ms)[0m  [1m[35mCREATE DATABASE "react_rails_heroku_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "foods" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "foods" ("id" bigserial primary key, "title" character varying, "cost" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "image" character varying, "Background" character varying)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" integer, "total" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191220230449)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191213000311),
+(20191214002828),
+(20191219084856),
+(20191219085156),
+(20191219091234),
+(20191219091612),
+(20191220065310);
+
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-20 23:12:30.123086"], ["updated_at", "2019-12-20 23:12:30.123086"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4bd513ad975096a145e9f83fa2011872bb0526f8"], ["created_at", "2019-12-20 23:12:30.132072"], ["updated_at", "2019-12-20 23:12:30.132072"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "foods" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "foods" ("id" bigserial primary key, "title" character varying, "cost" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "image" character varying, "Background" character varying)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" integer, "total" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191220230449)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191213000311),
+(20191214002828),
+(20191219084856),
+(20191219085156),
+(20191219091234),
+(20191219091612),
+(20191220065310);
+
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-20 23:12:30.209552"], ["updated_at", "2019-12-20 23:12:30.209552"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-20 23:12:30.226068"], ["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4bd513ad975096a145e9f83fa2011872bb0526f8"], ["created_at", "2019-12-20 23:12:30.239369"], ["updated_at", "2019-12-20 23:12:30.239369"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (176.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_heroku_development"[0m
+  [1m[35m (183.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_heroku_test"[0m
+  [1m[35m (402.8ms)[0m  [1m[35mCREATE DATABASE "react_rails_heroku_development" ENCODING = 'unicode'[0m
+  [1m[35m (449.0ms)[0m  [1m[35mCREATE DATABASE "react_rails_heroku_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "foods" CASCADE[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "foods" ("id" bigserial primary key, "title" character varying, "cost" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "image" character varying, "Background" character varying)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" integer, "total" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191220230449)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191213000311),
+(20191214002828),
+(20191219084856),
+(20191219085156),
+(20191219091234),
+(20191219091612),
+(20191220065310);
+
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-20 23:13:02.949671"], ["updated_at", "2019-12-20 23:13:02.949671"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4bd513ad975096a145e9f83fa2011872bb0526f8"], ["created_at", "2019-12-20 23:13:02.962424"], ["updated_at", "2019-12-20 23:13:02.962424"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "foods" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "foods" ("id" bigserial primary key, "title" character varying, "cost" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "image" character varying, "Background" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" integer, "total" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191220230449)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191213000311),
+(20191214002828),
+(20191219084856),
+(20191219085156),
+(20191219091234),
+(20191219091612),
+(20191220065310);
+
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-20 23:13:03.060658"], ["updated_at", "2019-12-20 23:13:03.060658"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-20 23:13:03.086697"], ["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4bd513ad975096a145e9f83fa2011872bb0526f8"], ["created_at", "2019-12-20 23:13:03.109080"], ["updated_at", "2019-12-20 23:13:03.109080"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.4ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Donut"], ["cost", 8.0], ["created_at", "2019-12-20 23:13:03.221455"], ["updated_at", "2019-12-20 23:13:03.221455"], ["image", "https://static.vecteezy.com/system/resources/previews/000/406/612/non_2x/donut-with-a-bite-vector.jpg"], ["Background", "#ffa8ca"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.4ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ice-cream Sundae"], ["cost", 6.0], ["created_at", "2019-12-20 23:13:03.231506"], ["updated_at", "2019-12-20 23:13:03.231506"], ["image", "https://static.vecteezy.com/system/resources/previews/000/559/023/large_2x/ice-cream-sundae-vector-illustration-sweets-flat-style-icon.jpg"], ["Background", "#f2e266"]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.6ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Banana Split"], ["cost", 7.5], ["created_at", "2019-12-20 23:13:03.243516"], ["updated_at", "2019-12-20 23:13:03.243516"], ["image", "http://www.vectorsland.com/imgd/l91318-banana-split-86989.jpg"], ["Background", "#9bf2d7"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Cake"], ["cost", 4.2], ["created_at", "2019-12-20 23:13:03.253171"], ["updated_at", "2019-12-20 23:13:03.253171"], ["image", "https://static.vecteezy.com/system/resources/previews/000/097/848/large_2x/cake-with-roses-vector-background.jpg"], ["Background", "orange"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.5ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Golden Gaytime"], ["cost", 4.5], ["created_at", "2019-12-20 23:13:03.259971"], ["updated_at", "2019-12-20 23:13:03.259971"], ["image", "https://static.vecteezy.com/system/resources/previews/000/643/121/non_2x/vector-twisted-soft-ice-cream-on-pastel-background.png"], ["Background", "#ffa8ca"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Hot Chocolate"], ["cost", 6.0], ["created_at", "2019-12-20 23:13:03.266389"], ["updated_at", "2019-12-20 23:13:03.266389"], ["image", "https://static.vecteezy.com/system/resources/previews/000/395/325/non_2x/hot-drink-paper-cup-with-mockup-sleeve-vector.jpg"], ["Background", "#f2e266"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.4ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Hot Dog"], ["cost", 5.6], ["created_at", "2019-12-20 23:13:03.271769"], ["updated_at", "2019-12-20 23:13:03.271769"], ["image", "https://static.vecteezy.com/system/resources/previews/000/399/425/large_2x/vector-hot-dog-icon-doodle-illustration.jpg"], ["Background", "#9bf2d7"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Acai Bowl"], ["cost", 5.6], ["created_at", "2019-12-20 23:13:03.277435"], ["updated_at", "2019-12-20 23:13:03.277435"], ["image", "https://static.vecteezy.com/system/resources/previews/000/271/037/non_2x/color-acai-bowl-vector.jpg"], ["Background", "orange"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Pancakes"], ["cost", 4.0], ["created_at", "2019-12-20 23:13:03.283320"], ["updated_at", "2019-12-20 23:13:03.283320"], ["image", "https://media.istockphoto.com/vectors/breakfast-pancakes-illustration-vector-id928142004?k=6&m=928142004&s=612x612&w=0&h=cZIzTU4T4F7OsPSQsQJGHE-Y3Uq0tciuiDUd_Np2vG8="], ["Background", "#ffa8ca"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (199.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_heroku_development"[0m
+  [1m[35m (214.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_heroku_test"[0m
+  [1m[35m (528.0ms)[0m  [1m[35mCREATE DATABASE "react_rails_heroku_development" ENCODING = 'unicode'[0m
+  [1m[35m (465.2ms)[0m  [1m[35mCREATE DATABASE "react_rails_heroku_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "foods" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "foods" ("id" bigserial primary key, "title" character varying, "cost" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "image" character varying, "Background" character varying)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" integer, "total" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191220230449)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191213000311),
+(20191214002828),
+(20191219084856),
+(20191219085156),
+(20191219091234),
+(20191219091612),
+(20191220065310);
+
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-20 23:20:22.643756"], ["updated_at", "2019-12-20 23:20:22.643756"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4bd513ad975096a145e9f83fa2011872bb0526f8"], ["created_at", "2019-12-20 23:20:22.653673"], ["updated_at", "2019-12-20 23:20:22.653673"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "foods" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "foods" ("id" bigserial primary key, "title" character varying, "cost" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "image" character varying, "Background" character varying)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" integer, "total" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191220230449)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191213000311),
+(20191214002828),
+(20191219084856),
+(20191219085156),
+(20191219091234),
+(20191219091612),
+(20191220065310);
+
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-20 23:20:22.728039"], ["updated_at", "2019-12-20 23:20:22.728039"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-20 23:20:22.743645"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4bd513ad975096a145e9f83fa2011872bb0526f8"], ["created_at", "2019-12-20 23:20:22.757353"], ["updated_at", "2019-12-20 23:20:22.757353"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.0ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Hot Coffee"], ["cost", 8.0], ["created_at", "2019-12-20 23:20:22.847495"], ["updated_at", "2019-12-20 23:20:22.847495"], ["image", "https://static.vecteezy.com/system/resources/previews/000/395/325/non_2x/hot-drink-paper-cup-with-mockup-sleeve-vector.jpg"], ["Background", "#ffa8ca"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Donut"], ["cost", 6.0], ["created_at", "2019-12-20 23:20:22.853288"], ["updated_at", "2019-12-20 23:20:22.853288"], ["image", "https://static.vecteezy.com/system/resources/previews/000/406/612/non_2x/donut-with-a-bite-vector.jpg"], ["Background", "#f2e266"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Banana Split"], ["cost", 7.5], ["created_at", "2019-12-20 23:20:22.857179"], ["updated_at", "2019-12-20 23:20:22.857179"], ["image", "http://www.vectorsland.com/imgd/l91318-banana-split-86989.jpg"], ["Background", "#9bf2d7"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Pancakes"], ["cost", 4.2], ["created_at", "2019-12-20 23:20:22.860578"], ["updated_at", "2019-12-20 23:20:22.860578"], ["image", "https://media.istockphoto.com/vectors/breakfast-pancakes-illustration-vector-id928142004?k=6&m=928142004&s=612x612&w=0&h=cZIzTU4T4F7OsPSQsQJGHE-Y3Uq0tciuiDUd_Np2vG8="], ["Background", "orange"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Iced Coffee"], ["cost", 4.5], ["created_at", "2019-12-20 23:20:22.864024"], ["updated_at", "2019-12-20 23:20:22.864024"], ["image", "https://static.vecteezy.com/system/resources/previews/000/202/224/non_2x/iced-coffee-illustration-vector.jpg"], ["Background", "#ffa8ca"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sundae"], ["cost", 6.0], ["created_at", "2019-12-20 23:20:22.867388"], ["updated_at", "2019-12-20 23:20:22.867388"], ["image", "https://static.vecteezy.com/system/resources/previews/000/643/121/non_2x/vector-twisted-soft-ice-cream-on-pastel-background.png"], ["Background", "#f2e266"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.2ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fruit Salad"], ["cost", 5.6], ["created_at", "2019-12-20 23:20:22.871056"], ["updated_at", "2019-12-20 23:20:22.871056"], ["image", "https://static.vecteezy.com/system/resources/previews/000/271/037/non_2x/color-acai-bowl-vector.jpg"], ["Background", "#9bf2d7"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("title", "cost", "created_at", "updated_at", "image", "Background") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Popsicle"], ["cost", 5.6], ["created_at", "2019-12-20 23:20:22.874706"], ["updated_at", "2019-12-20 23:20:22.874706"], ["image", "https://static.vecteezy.com/system/resources/previews/000/535/056/non_2x/vector-ice-pop.jpg"], ["Background", "orange"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 10:20:54 +1100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 401 Unauthorized in 9ms (Views: 0.3ms | ActiveRecord: 6.3ms | Allocations: 1303)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-12-21 10:21:13 +1100
+Processing by UsersController#create_user as HTML
+  Parameters: {"user"=>{"name"=>"Tristan", "email"=>"tristan@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tristan@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tristan"], ["email", "tristan@email.com"], ["password_digest", "$2a$12$DhsMwxKtSZ0fto7UUXkf4OBG5kagkHY1hxfiwdeX0T0nwdChJerSu"], ["created_at", "2019-12-20 23:21:14.191990"], ["updated_at", "2019-12-20 23:21:14.191990"]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+Completed 201 Created in 298ms (Views: 0.4ms | ActiveRecord: 6.9ms | Allocations: 7264)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 10:21:28 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"tristan@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"tristan@email.com"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tristan@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 288ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 826)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 10:21:28 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1464)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 10:21:31 +1100
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 10:21:31 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 1337)
+
+
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (8.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 76ms (Views: 0.7ms | ActiveRecord: 28.3ms | Allocations: 8956)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 10:23:03 +1100
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 10:23:03 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (9.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 14ms (Views: 1.4ms | ActiveRecord: 9.3ms | Allocations: 1989)
+
+
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 21.2ms | Allocations: 1364)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 10:27:01 +1100
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 10:27:01 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (0.8ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 1955)
+
+
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 11.0ms | Allocations: 1337)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 10:27:41 +1100
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 10:27:41 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (2.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 2.6ms | Allocations: 1956)
+
+
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (17.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 25ms (Views: 0.8ms | ActiveRecord: 20.5ms | Allocations: 1337)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 10:30:19 +1100
+Processing by FoodsController#get as HTML
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 10:30:19 +1100
+  [1m[36mFood Load (3.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 3.2ms | Allocations: 3043)
+
+
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 13ms (Views: 1.0ms | ActiveRecord: 5.9ms | Allocations: 2973)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 10:30:37 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (2.0ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 2.0ms | Allocations: 1955)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 10:30:37 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 2.0ms | Allocations: 1337)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2019-12-21 10:31:24 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 5.0ms | Allocations: 1337)
+
+

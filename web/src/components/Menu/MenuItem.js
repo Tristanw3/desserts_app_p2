@@ -7,7 +7,7 @@ import { MenuButton, StyledLink } from '../Button';
 export default class MenuItem extends Component {
 	render() {
 		return (
-			<MenuCard>
+			<MenuCard background={this.props.background}>
 				<FoodImage image={this.props.image} />
 				<FoodTextLayout>
 					<FoodName>{this.props.title}</FoodName>
