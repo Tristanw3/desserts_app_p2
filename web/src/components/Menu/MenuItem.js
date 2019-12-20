@@ -8,7 +8,7 @@ export default class MenuItem extends Component {
 	render() {
 		return (
 			<MenuCard>
-				<FoodImage />
+				<FoodImage image={this.props.image} />
 				<FoodTextLayout>
 					<FoodName>{this.props.title}</FoodName>
 					<FoodCost>... {'$' + this.props.cost}</FoodCost>
