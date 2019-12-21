@@ -111,7 +111,7 @@ class App extends Component {
 							<PurchasePage user={userProps} cart={cartProps} />
 						</Route>
 						<Route path="/account" component={Account}>
-							<Signup user={userProps} cart={cartProps} />
+							<Account user={userProps} cart={cartProps} />
 						</Route>
 						<Route path="/login" component={Login}>
 							<Login user={userProps} cart={cartProps} />

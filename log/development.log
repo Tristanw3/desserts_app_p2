@@ -16550,3 +16550,620 @@ Processing by UsersController#get_by_id as HTML
 Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 5.0ms | Allocations: 1337)
 
 
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 10:47:03 +1100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 401 Unauthorized in 5ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 1303)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 10:47:22 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 645)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-12-21 10:47:33 +1100
+Processing by UsersController#create_user as HTML
+  Parameters: {"user"=>{"name"=>"test", "email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["email", "test@email.com"], ["password_digest", "$2a$12$PYWCfo33SVVJgDr7lC6cguEZpxAF4sghZ8fIBc4aBTNGY2GHAj6Xe"], ["created_at", "2019-12-20 23:47:33.513050"], ["updated_at", "2019-12-20 23:47:33.513050"]]
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13:in `create_user'
+Completed 201 Created in 287ms (Views: 0.4ms | ActiveRecord: 8.3ms | Allocations: 7264)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 10:47:42 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 269ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 827)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:47:42 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1464)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 10:47:44 +1100
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:47:44 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (3.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 66ms (Views: 1.2ms | ActiveRecord: 15.5ms | Allocations: 8896)
+
+
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 4.2ms | Allocations: 1423)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:47:45 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 4.7ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:50:30 +1100
+Started GET "/purchase" for 127.0.0.1 at 2019-12-21 10:50:30 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"purchase"}
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 3713)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 270ms (Views: 0.3ms | ActiveRecord: 24.0ms | Allocations: 173479)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:50:33 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 1.3ms | Allocations: 1357)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:51:50 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:52:02 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:55:31 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 8.5ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:56:38 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 7.3ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:56:40 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 8.3ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:57:26 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:57:37 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 10.8ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:57:48 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:58:00 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (18.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 20.0ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:58:55 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 2.4ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:59:11 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:59:23 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 9.9ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:59:35 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1340)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 10:59:57 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:00:20 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 5.3ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:00:48 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:01:23 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 11.0ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:01:47 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 26ms (Views: 1.0ms | ActiveRecord: 21.7ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:02:02 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:02:57 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.7ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:03:20 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:05:26 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 11ms (Views: 1.4ms | ActiveRecord: 1.6ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:05:48 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:06:41 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:06:51 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:07:08 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (29.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 35ms (Views: 0.4ms | ActiveRecord: 30.3ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:08:53 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 17ms (Views: 1.7ms | ActiveRecord: 7.9ms | Allocations: 1337)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 11:09:09 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 290ms (Views: 2.0ms | ActiveRecord: 6.1ms | Allocations: 801)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:09:09 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1337)
+
+
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 11:09:12 +1100
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:09:12 +1100
+Processing by FoodsController#get as HTML
+  [1m[36mFood Load (24.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 36ms (Views: 1.5ms | ActiveRecord: 24.4ms | Allocations: 1969)
+
+
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 152ms (Views: 0.9ms | ActiveRecord: 15.8ms | Allocations: 1423)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:09:15 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 11.8ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:09:55 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 9ms (Views: 1.4ms | ActiveRecord: 3.5ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:10:22 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+Started GET "/api/foods" for 127.0.0.1 at 2019-12-21 11:10:22 +1100
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Processing by FoodsController#get as HTML
+Completed 200 OK in 22ms (Views: 1.3ms | ActiveRecord: 10.4ms | Allocations: 2084)
+
+
+  [1m[36mFood Load (1.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:3:in `get'
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 1.2ms | Allocations: 2120)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:10:33 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (21.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (93.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 120ms (Views: 0.7ms | ActiveRecord: 113.9ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:11:20 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:11:36 +1100
+Started GET "/purchase" for 127.0.0.1 at 2019-12-21 11:11:36 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"purchase"}
+  [1m[36mUser Load (38.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 790)
+
+
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+  [1m[36mUser Load (247.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 302ms (Views: 0.4ms | ActiveRecord: 286.2ms | Allocations: 169480)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:11:42 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:12:43 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (46.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 64ms (Views: 0.7ms | ActiveRecord: 57.1ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:12:56 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1337)
+
+
+Started POST "/api/auth/get_token" for 127.0.0.1 at 2019-12-21 11:13:05 +1100
+Processing by UsersController#get_token as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test@email.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `get_token'
+Completed 200 OK in 274ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 799)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:13:05 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.6ms | Allocations: 1340)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:13:09 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:13:47 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 9.6ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:13:58 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1337)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:14:00 +1100
+Started GET "/purchase" for 127.0.0.1 at 2019-12-21 11:14:00 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+Processing by ApplicationController#fallback_index_html as HTML
+  Parameters: {"path"=>"purchase"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from fallback_index_html at /Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/controllers/application_controller.rb:5)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 352)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+  * "/Users/tristan-mac/coding_projects/ruby_projects/p3/desserts_app_p2"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:5:in `fallback_index_html'
+  [1m[36mUser Load (306.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 313ms (Views: 0.3ms | ActiveRecord: 307.8ms | Allocations: 168757)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2019-12-21 11:14:16 +1100
+Processing by UsersController#get_by_id as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:17:in `authorize_request'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `get_by_id'
+Completed 200 OK in 24ms (Views: 0.9ms | ActiveRecord: 18.6ms | Allocations: 1337)
+
+

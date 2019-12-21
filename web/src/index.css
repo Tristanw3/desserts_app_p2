@@ -20,12 +20,13 @@ popsicle: https://static.vecteezy.com/system/resources/previews/000/535/056/non_
 
 */
 
-
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	height: auto;
+	background: #9bf2d7;
 }
 
 /* input {

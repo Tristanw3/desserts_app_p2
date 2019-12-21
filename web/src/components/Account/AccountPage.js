@@ -4,35 +4,36 @@ import { AccountCard, ItemSection, DateSection, TotalSection } from './AccountCa
 import { FoodThumbnail } from '../Food/FoodStyled';
 
 export default class AccountPage extends Component {
-    render() {
-        return (
-            <PageSize>
-                <YellowBanner>
-                    <YellowBannerHeader>
-                        <h1>Purchase History</h1>
-                        <p>Username</p>
-                        <p>Email</p>
-                    </YellowBannerHeader>
-                </YellowBanner>
-                <AquaContainerHeader>
-                    <h2>Item</h2>
-                    <h2>Date</h2>
-                    <h2>Total</h2>
-                </AquaContainerHeader>
+	render() {
+		let word = sessionStorage.getItem('currentUser');
 
-                <AccountCard>
+		console.log('props');
+		console.log(word);
+		return (
+			<PageSize>
+				<YellowBanner>
+					<YellowBannerHeader>
+						<h1>Purchase History</h1>
+						<p>Username: </p>
+						<p>Email</p>
+					</YellowBannerHeader>
+				</YellowBanner>
+				<AquaContainerHeader>
+					<h2>Item</h2>
+					<h2>Date</h2>
+					<h2>Total</h2>
+				</AquaContainerHeader>
 
-                    <ItemSection>
-                        <FoodThumbnail />
-                        <FoodThumbnail />
-                    </ItemSection>
+				<AccountCard>
+					<ItemSection>
+						<FoodThumbnail />
+						<FoodThumbnail />
+					</ItemSection>
 
-                    <DateSection>21-Dec-2019</DateSection>
-                    <TotalSection>$000</TotalSection>
-
-                </AccountCard>
-
-            </PageSize>
-        );
-    }
+					<DateSection>21-Dec-2019</DateSection>
+					<TotalSection>$000</TotalSection>
+				</AccountCard>
+			</PageSize>
+		);
+	}
 }
