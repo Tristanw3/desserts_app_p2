@@ -5,10 +5,6 @@ import { FoodThumbnail } from '../Food/FoodStyled';
 
 export default class AccountPage extends Component {
 	render() {
-		let word = sessionStorage.getItem('currentUser');
-
-		console.log('props');
-		console.log(word);
 		return (
 			<PageSize>
 				<YellowBanner>

@@ -2,7 +2,7 @@
 
 Run locally command: ```heroku local -f Procfile.dev```
 
-Heroku deployed link: https://desolate-anchorage-78403.herokuapp.com/
+Heroku deployed link: https://pure-brushlands-46298.herokuapp.com/account
 
 
 This README would normally document whatever steps are necessary to get the
