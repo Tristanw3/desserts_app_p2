@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
+import { withRouter, Link } from 'react-router-dom';
 
 const Styles = styled.div`
 	.navbar {
@@ -26,9 +27,9 @@ const Styles = styled.div`
 	}
 `;
 
-export default class NavigationBar extends React.Component {
+class NavigationBar extends React.Component {
 	handleLogoutBtn = () => {
-		this.props.user.logout();
+		this.props.user.logout();		
 	};
 
 	render() {
@@ -37,31 +38,42 @@ export default class NavigationBar extends React.Component {
 		return (
 			<Styles>
 				<Navbar expand="lg">
-					<Navbar.Brand href="/">Sweets To Go</Navbar.Brand>
+					<Navbar.Brand >
+						<Link to="/">Sweets To Go</Link>
+					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="ml-auto">
 							<Nav.Item>
-								<Nav.Link href="/">Home</Nav.Link>
+								<Nav.Link >
+									<Link to='/'>Home</Link>
+								</Nav.Link>
 							</Nav.Item>
 							<Nav.Item>
-								<Nav.Link href="/menu">Menu</Nav.Link>
+								<Nav.Link>
+									<Link to='/menu'>Menu</Link>
+								</Nav.Link>
 							</Nav.Item>
 							<Nav.Item>
 								{this.props.user.isLoggedIn ? (
-									<Nav.Link href="/" onClick={this.handleLogoutBtn}>
+									<Nav.Link onClick={this.handleLogoutBtn}>
 										Logout
 									</Nav.Link>
 								) : (
-									<Nav.Link href="/login">Login</Nav.Link>
+									<Nav.Link >
+										<Link to="/login">Login</Link>
+									</Nav.Link>
 								)}
 							</Nav.Item>
 							<Nav.Item>
-								{sessionStorage.auth ? <Nav.Link href="/account">Account </Nav.Link> : null}
+								{sessionStorage.auth ? 
+								<Nav.Link >
+									<Link to="/account">Account</Link> 
+								</Nav.Link> : null}
 							</Nav.Item>
 							<Nav.Item>
-								<Nav.Link href="/purchase">
-									<i className="fas fa-shopping-cart" />
+								<Nav.Link>
+									<Link to='/purchase'><i className="fas fa-shopping-cart" /></Link>
 								</Nav.Link>
 							</Nav.Item>
 						</Nav>
@@ -71,3 +83,6 @@ export default class NavigationBar extends React.Component {
 		);
 	}
 }
+
+
+export default withRouter(NavigationBar)

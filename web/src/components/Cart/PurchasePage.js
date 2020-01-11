@@ -35,6 +35,8 @@ export default class PurchasePage extends Component {
 	};
 
 	render() {
+		
+		
 		return (
 			<PageSize>
 				<YellowBanner>

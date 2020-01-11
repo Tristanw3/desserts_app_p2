@@ -28,11 +28,12 @@ export default class MenuPage extends Component {
 			});
 	}
 
+
 	render() {
 		const foods = this.state.lillian.map((food, index) => (
 			<MenuItem
 				key={index}
-				addToCart={this.props.cart.addToCart}
+				addToCart={this.props.addToCart}
 				title={food.title}
 				cost={food.cost}
 				image={food.image}

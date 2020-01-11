@@ -22,7 +22,7 @@ class App extends Component {
 			isLoggedIn: !!auth ? true : false,
 			currentUser: null,
 			cart: [],
-			cartCost: 0
+			total: 0
 		};
 	}
 
@@ -73,14 +73,17 @@ class App extends Component {
 		this.setState({ ...this.state, currentUser: null, isLoggedIn: false });
 	}
 
-	handleAddToCart = (obj) => {
-		console.log(this.state);
+	handleAddToCart = (obj, cost) => {
+		
+		let cartArr = this.state.cart;
+		let subTotal = this.state.total;
+		cartArr.push(obj);
+		subTotal += cost;
 
-		let cartArr = this.state.cart.push(obj);
-		// console.log(cartArr);
+		console.log(cartArr);
+		console.log(subTotal);
 		this.setState({ ...this.state, cart: cartArr });
-
-		// console.log(this.state);
+		console.log(this.state);
 	};
 
 	render() {
@@ -92,23 +95,26 @@ class App extends Component {
 		};
 
 		const cartProps = {
-			cartCount: null,
-			addToCart: this.handleAddToCart
+			cartCount: 0,
+			cart: this.state.cart,
+			total: this.state.total
 		};
-
+		console.log("-----------------------------")
+		console.log(this.state.cart);
 		return (
 			<React.Fragment>
-				<NavigationBar user={userProps} />
 				<Router>
+					<NavigationBar user={userProps} />
+
 					<Switch>
-						<Route exact path="/" component={SummerHome}>
+						<Route exact path="/">
 							<SummerHome user={userProps} cart={cartProps} />
 						</Route>
 						<Route path="/menu" component={MenuPage}>
-							<MenuPage user={userProps} cart={cartProps} />
+							<MenuPage user={userProps} cart={this.state.cart} addToCart={this.handleAddToCart}/>
 						</Route>
 						<Route path="/purchase" component={PurchasePage}>
-							<PurchasePage user={userProps} cart={cartProps} />
+							<PurchasePage user={userProps} cart={this.state.cart}/>
 						</Route>
 						<Route path="/account" component={Account}>
 							<Account user={userProps} cart={cartProps} />

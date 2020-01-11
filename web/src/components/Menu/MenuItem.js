@@ -12,8 +12,8 @@ export default class MenuItem extends Component {
 				<FoodTextLayout>
 					<FoodName>{this.props.title}</FoodName>
 					<FoodCost>... {'$' + this.props.cost}</FoodCost>
-					<StyledLink to="/purchase">
-						<MenuButton onClick={() => this.props.addToCart('hello')}>Add to cart</MenuButton>
+					<StyledLink to='#'>
+						<MenuButton onClick={() => this.props.addToCart(this.props.title, this.props.cost)}>Add to cart</MenuButton>
 					</StyledLink>
 				</FoodTextLayout>
 			</MenuCard>
