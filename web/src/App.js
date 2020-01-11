@@ -78,12 +78,13 @@ class App extends Component {
 		let cartArr = this.state.cart;
 		let subTotal = this.state.total;
 		cartArr.push(obj);
-		subTotal += cost;
+		subTotal = subTotal + cost;
 
 		console.log(cartArr);
 		console.log(subTotal);
-		this.setState({ ...this.state, cart: cartArr });
-		console.log(this.state);
+
+		this.setState({ ...this.state, cart: cartArr ,total: subTotal });
+		
 	};
 
 	render() {
@@ -95,12 +96,11 @@ class App extends Component {
 		};
 
 		const cartProps = {
-			cartCount: 0,
 			cart: this.state.cart,
 			total: this.state.total
 		};
-		console.log("-----------------------------")
-		console.log(this.state.cart);
+		
+
 		return (
 			<React.Fragment>
 				<Router>
@@ -111,10 +111,10 @@ class App extends Component {
 							<SummerHome user={userProps} cart={cartProps} />
 						</Route>
 						<Route path="/menu" component={MenuPage}>
-							<MenuPage user={userProps} cart={this.state.cart} addToCart={this.handleAddToCart}/>
+							<MenuPage user={userProps} cart={cartProps} addToCart={this.handleAddToCart}/>
 						</Route>
 						<Route path="/purchase" component={PurchasePage}>
-							<PurchasePage user={userProps} cart={this.state.cart}/>
+							<PurchasePage user={userProps} cart={cartProps}/>
 						</Route>
 						<Route path="/account" component={Account}>
 							<Account user={userProps} cart={cartProps} />

@@ -26,6 +26,7 @@ export default class PurchasePage extends Component {
 		this.setState({
 			isShowing: true
 		});
+		confirmPurchase();
 	};
 
 	closeModalHandler = () => {
@@ -34,13 +35,35 @@ export default class PurchasePage extends Component {
 		});
 	};
 
+	confirmPurchase() {
+		axios
+			.post(`/api/users/${auth.userId}`, {
+				headers: { Authorization: `Bearer ${auth.token}` }
+			})
+			.then((response) => {
+				this.setState({
+					...this.state,
+					currentUser: response.data,
+					isLoggedIn: true
+				});
+				return <Redirect to="/" />;
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+
+	
 	render() {
 		
+		const foodList = this.props.cart.cart.map((food, index) => (
+			<li key={index}>{food}</li>
+		));
 		
 		return (
 			<PageSize>
 				<YellowBanner>
-					<h1>Total Amount: $000</h1>
+					<h1>Total Amount: ${this.props.cart.total}.00</h1>
 					{this.state.isShowing ? <BackDrop onClick={this.closeModalHandler} /> : null}
 
 					<ButtonRow>
@@ -55,8 +78,10 @@ export default class PurchasePage extends Component {
 					<Modal show={this.state.isShowing} close={this.closeModalHandler}>
 						<p>and thanks for shopping with us</p>
 					</Modal>
-
-					<PurchaseCard>
+					 	<ol>
+						 {foodList}
+						</ol>	
+					{/* <PurchaseCard>
 						<FoodImage />
 
 						<FoodTextLayout>
@@ -69,7 +94,7 @@ export default class PurchasePage extends Component {
 							<PurchaseNumber>0</PurchaseNumber>
 							<Subtract>-</Subtract>
 						</AddSubtractBlock>
-					</PurchaseCard>
+					</PurchaseCard> */}
 				</PinkContainer>
 			</PageSize>
 		);

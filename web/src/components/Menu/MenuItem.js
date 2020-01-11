@@ -5,6 +5,7 @@ import { MenuCard } from './MenuItemStyled';
 import { MenuButton, StyledLink } from '../Button';
 
 export default class MenuItem extends Component {
+	
 	render() {
 		return (
 			<MenuCard background={this.props.background}>

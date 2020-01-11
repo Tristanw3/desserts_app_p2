@@ -6,7 +6,7 @@ import { MenuPageStyling } from './MenuPageStyled';
 
 export default class MenuPage extends Component {
 	state = {
-		lillian: []
+		foodItems: []
 	};
 
 	componentDidMount() {
@@ -19,9 +19,9 @@ export default class MenuPage extends Component {
 			})
 			.then((response) => {
 				this.setState({
-					lillian: response.data
+					foodItems: response.data
 				});
-				console.log(this.state.lillian);
+				console.log(this.state.foodItems);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -30,7 +30,7 @@ export default class MenuPage extends Component {
 
 
 	render() {
-		const foods = this.state.lillian.map((food, index) => (
+		const foods = this.state.foodItems.map((food, index) => (
 			<MenuItem
 				key={index}
 				addToCart={this.props.addToCart}
